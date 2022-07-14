@@ -46,7 +46,6 @@ html{
 /* ------------------------------------------ */
 
 #galeria {
-    position: fixed;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     grid-template-columns: repeat(3, 1fr);
@@ -54,9 +53,7 @@ html{
     max-width: 700px;
     min-width: 400px;
     padding: 0 10px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: 10px 20%;
   }
   
   #galeria img {
