@@ -1,134 +1,49 @@
-// let entrada = prompt("ingrese un dia")
-// while(entrada != "ESC"){
-//     switch(entrada){
-//         case "martes":
-//             alert("Turnos disponibles");
-//             break;
-//         case "miercoles":
-//             alert("Turnos disponibles");
-//             break;
-//         case "jueves":
-//             alert("Turnos disponibles");
-//             break;
-//         case "viernes":
-//             alert("Turnos disponibles");
-//             break;
-//         case "sabado":
-//             alert("Turnos disponibles");
-//             break;
-//         case "domingo":
-//             alert("Estamos Cerrados");
-//             break;
-//         case "lunes":
-//             alert("Estamos Cerrados");
-//             break;
-//         }
-//     entrada = prompt("ingrese un dia")
-// }
-// alert("Bienvenido a Leglam");
+const btnCierra = document.querySelector('#btn-cierra');
+const btnAdelanta = document.querySelector('#btn-adelanta');
+const btnRetrocede = document.querySelector('#btn-retrocede');
+const imagenes = document.querySelectorAll('#galeria img');
+const lightbox = document.querySelector('#contenedor-principal');
+const imagenActiva = document.querySelector('#img-activa');
+let indiceImagen = 0;
 
-// function largoDelPelo(){
-//     let largo =prompt("ingrese el largo de su cabello")
-//     if(largo === ""){
-//         alert("debe ingresar el largo de su cabello");
-//         largoDelPelo();
-//     }
-//     else{
-//         ingresarColor()
-//     }
-//     console.log(largo)
-// }
+/*Abre el Lightbox*/
 
-// largoDelPelo()
+const abreLightbox = (event) => {
+    imagenActiva.src = event.target.src;
+    lightbox.style.display = 'flex';
+    indiceImagen = Array.from(imagenes).indexOf(event.target);
+};
 
-// function ingresarColor(){
-//     let color =prompt("ingrese el color de su cabello")
-//     if(color === ""){
-//         alert("debe ingresar el color de su cabello");
-//         ingresarColor();
-//     }
-//     else{
-//         estadoDelPelo()
-//     }
-//     console.log(color)
-// }
+imagenes.forEach((imagen) => {
+    imagen.addEventListener('click', abreLightbox);
+});
 
-// function estadoDelPelo(){
-//     let estado =prompt("ingrese el estado de su cabello")
-//     if(estado === ""){
-//         alert("debe ingresar el estado de su cabello");
-//         estadoDelPelo();
-//     }
-//     else{
-//         trabajoDeseado()
-//     }
-//     console.log(estado)
-// }
+/*Cierra el Lightbox */
 
-// function trabajoDeseado(){
-//     console.log("1:corte");
-//     console.log("2:decoloracion");
-//     console.log("3:alisado")
+btnCierra.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+});
 
-// let trabajoDeseado=prompt("Seleccione el trabajo deseado");
+/* Adelanta la imagen*/
 
-// switch(trabajoDeseado){
-//     case "1":
-//         console.log("Eligio corte de Cabello");
-//         pregunta();
-//         break;
-//     case "2":
-//         console.log("Eligio corte de Cabello");
-//         pregunta();
-//         break;
-//     case "3":
-//         console.log("Eligio corte de Cabello");
-//         pregunta();
-//         break;
-//     default:
-//         alert("Seleccione un tipo de trabajo");
-//         trabajoDeseado();
-//         break;
-// }
-// }
-// function pregunta(){
-//     console.log("Pedir otro turno");
-//     console.log("1: Si");
-//     console.log("2: No");
-    
-//     let preguntaFinal=prompt("¿Desea pedir otro turno?");
+const adelantaImagen = () => {
+    if (indiceImagen === imagenes.length - 1) {
+    indiceImagen = -1;
+    }
+    imagenActiva.src = imagenes[indiceImagen + 1].src;
+    indiceImagen++;
+};
 
-//     switch(preguntaFinal){
-//         case "1":
-//             largoDelPelo();
-//             break;
-//         case "2":
-//             alert("Te esperamos el dia del turno");
-//             break;
-//         default:
-//             alert("Opcion Invalida");
-//             break;
+btnAdelanta.addEventListener('click', adelantaImagen);
 
-//     }
-// }
-//ARRAYS
+/*Retrocede la Imagen*/
 
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-}
+const retrocederImagen = () => {
+    if (indiceImagen === 0) {
+    indiceImagen = imagenes.length;
+    }
+    imagenActiva.src = imagenes[indiceImagen - 1].src;
+    indiceImagen--;
+};
 
-let array = [];
-
-for(let i=1;i<=10;i++){
-    array.push(getRandomInt(1, 100));
-}
-
-let array2 = array.slice();
-
-array2.push(5);
-
-console.log("Array1");
-console.log(array);
-
-console.log("Array2");
-console.log(array2);
+btnRetrocede.addEventListener('click', retrocederImagen);
