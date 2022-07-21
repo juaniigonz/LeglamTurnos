@@ -43,3 +43,19 @@ const retrocederImagen = () => {
 };
 
 btnRetrocede.addEventListener('click', retrocederImagen);
+
+
+// formulario de presupuesto
+
+let formulario = document.getElementById("formularioCotizacion");
+
+// formulario.addEventListener("submit" , validarForm);
+// formulario.addEventListener("submit" , (e) => {
+//     e.preventdefalut();
+
+
+// });
+
+
+
+

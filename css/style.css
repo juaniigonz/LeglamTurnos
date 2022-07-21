@@ -16,7 +16,7 @@ html{
 .navBar{
     display: flex;
     flex-direction: row;
-    background-color: #9772FB;
+    background-color: #F2F2F2;
     width: 100%;
     height: 25%;;
     justify-content: space-between;
@@ -27,6 +27,9 @@ html{
 }
 .navLogo{
     justify-self: flex-start;
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;         
+    transition: transform 0.2s;
 }
 .navLinks {
     display: flex;
@@ -37,7 +40,7 @@ html{
 .navLinks a{
     list-style: none;
     text-decoration: none;
-    color:#F5EDDC;
+    color:black;
     font-size: 1.5rem;
     margin:2rem ;
     text-align: end;
@@ -47,11 +50,10 @@ html{
 
 #galeria {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     grid-gap: 2px;
-    max-width: 700px;
-    min-width: 400px;
+    max-width: 800px;
+    min-width: 600px;
     padding: 0 10px;
     margin: 10px 20%;
   }
@@ -125,17 +127,70 @@ html{
     right: 0;
     font-size: 3rem;
   }
-/* carrusel marcas */
+.historia{
+  display: flex;
+  flex-direction: column;
+
+}
+.historia h2{
+  font-size: 28px;
+  text-align: center;
+}
+.historiaCont{
+  display: flex;
+  flex-direction: row;
+}
+.historiaText{
+  display: flex;
+  flex-direction: column;
+}
+.historiaCont img{
+  width: 30%;
+}
+
+  /* carrusel marcas */
 #nuestrasMarcas{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.marcasImg{
+  flex-direction: row;
+}
+
+.marcasImg img{ 
+  width: 22%;
+  filter: brightness(1.1);         
+  mix-blend-mode: multiply;         
+  transition: transform 0.2s;
+}
+
+
+
+/* Servicios */
+.servicios{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  max-width: 100vw;
+  justify-content: center;
+  justify-self: center;
 }
-#nuestrasMarcas div img{
-  width: 20%;
+.servicios div{
+  width: 45%;
+  margin: 10px;
+  height: 100%;
+  min-height: 250px;
+}
+.servicios div ul{
+  list-style: none;
+  font-size: large;
 }
 
-  /* Footer */
+
+
+/* Footer */
   
   #footer{
     background-color: #764AF1;
@@ -144,3 +199,5 @@ html{
     color: #F2F2F2;
     font-size: larger;
   }
+
+  
