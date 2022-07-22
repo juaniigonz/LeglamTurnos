@@ -7,22 +7,32 @@
 }
 html{
     background-color: #F2F2F2 ;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
 }
 *,
  *::before,
- *::after{
+ *::after
+{
     box-sizing: inherit;
 }
+
 .navBar{
     display: flex;
     flex-direction: row;
     background-color: #F2F2F2;
     width: 100%;
-    height: 25%;;
+    height: 17%;
     justify-content: space-between;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    position: fixed;
+    overflow: hidden;
+}
+nav{
+  float: left;
 }
 .navBar a img{
-    width: 50%;
+    width: 60%;
 
 }
 .navLogo{
@@ -34,7 +44,7 @@ html{
 .navLinks {
     display: flex;
     flex-direction: row;
-    
+    align-items: center;
 
 }
 .navLinks a{
@@ -46,16 +56,19 @@ html{
     text-align: end;
 }
 
+main{
+  padding-top: 120px;
+}
+
 /* ------------------------------------------ */
 
 #galeria {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-gap: 2px;
-    max-width: 800px;
+    grid-template-columns: repeat(9, 1fr);
+    grid-gap: 3px;
     min-width: 600px;
-    padding: 0 10px;
-    margin: 10px 20%;
+    padding: 0px;
+    margin: 20px 20px;
   }
   
   #galeria img {
@@ -91,8 +104,9 @@ html{
     border: 2px #f3f3f3 solid;
     padding: 2px;
     background: #3f3f3f;
-    max-width: 500px;
+    max-width: 350px;
     min-height: 400px;
+    max-height: 80%;
     position: relative;
     display: flex;
     justify-content: center;
@@ -127,10 +141,12 @@ html{
     right: 0;
     font-size: 3rem;
   }
-.historia{
+/* seccion 2 index */
+
+  .historia{
   display: flex;
   flex-direction: column;
-
+  margin: 50px 20px;
 }
 .historia h2{
   font-size: 28px;
@@ -145,17 +161,25 @@ html{
   flex-direction: column;
 }
 .historiaCont img{
-  width: 30%;
+  width: 20%;
+  height: 20%;
+}
+.historiaText p{
+  font-size: 1.8rem;
 }
 
-  /* carrusel marcas */
+  /*marcas */
 #nuestrasMarcas{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 10px 0;
 }
 .marcasImg{
+  display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .marcasImg img{ 
@@ -177,27 +201,82 @@ html{
   justify-content: center;
   justify-self: center;
 }
-.servicios div{
-  width: 45%;
-  margin: 10px;
+.servicios h3{
+  font-size: 2rem;
+  text-align: center;
+}
+.servicios>div{
+  width: 40%;
+  margin: 20px 25px;
   height: 100%;
   min-height: 250px;
 }
 .servicios div ul{
+  display: flex;
   list-style: none;
   font-size: large;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.5rem;
 }
+.imgBanner{
+  width:100% ;
+  max-height: 150px;
+  overflow: hidden;
+  object-fit: cover;
+  filter: brightness(0.5);
+  opacity: 0.9;
+}
+.bannerServicios{
+  display: flex;
+}
+.bannerServicios h1{
+  z-index: 100;
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  font-size: 3rem;
+  transform: translate(-50%, 0);
+  color: #ececec;
+  font-size: 3rem;
+}
+/* servicios */
 
+.turnosMenu ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  list-style: none;
+}
+/* contacto */
+iframe {
+  border: 1px solid black;
+  margin: 10px 36%;
 
+  
+  
+}
+#formularioCotizacion{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 0 30%;
+}
 
 /* Footer */
   
   #footer{
-    background-color: #764AF1;
+    background-color: #1b0125;
   }
   #copyright{
     color: #F2F2F2;
     font-size: larger;
+  }
+  .redesSociales a{
+    color: #F2F2F2;
+    text-decoration: none;
+    width: 20px;
+    font-size: 2rem;
   }
 
   
