@@ -44,6 +44,15 @@ const retrocederImagen = () => {
 
 btnRetrocede.addEventListener('click', retrocederImagen);
 
+// array de fotos
+
+
+
+
+
+
+
+
 
 // formulario de presupuesto
 
