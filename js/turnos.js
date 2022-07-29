@@ -53,5 +53,6 @@ const turnosOlaplex =[
     {id:7, turno: "Aditivo en coloracion corto", precio:2000, tiempo:0,},
     {id:8, turno: "Aditivo en coloracion medio", precio:3000, tiempo:0,},
     {id:9, turno: "Aditivo en coloracion largo", precio:4000, tiempo:0,},
-]
+];
+
 

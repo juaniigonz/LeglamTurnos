@@ -1,3 +1,40 @@
+// array de fotos
+const array_imagenes = [
+
+    {id: 1, ruta: './img/galeria1.jpeg'},
+
+    {id: 2, ruta: './img/galeria2.jpeg'},
+
+    {id: 3, ruta: './img/galeria3.jpeg'},
+
+    {id: 4, ruta: './img/galeria4.jpeg'},
+
+    {id: 5, ruta: './img/galeria1.jpeg'},
+
+    {id: 6, ruta: './img/galeria2.jpeg'},
+
+    {id: 7, ruta: './img/galeria3.jpeg'},
+
+    {id: 8, ruta: './img/galeria4.jpeg'},
+    
+    {id: 9, ruta: './img/galeria1.jpeg'},
+];
+
+const imagenesHTML = document.querySelector('#galeria');
+
+for (const foto of array_imagenes) {
+
+    imagenesHTML.innerHTML += `
+
+        <img id=${foto.id} src="${foto.ruta}" alt="galeria de imagenes">   
+
+    `;
+
+}
+
+
+// lightbox
+
 const btnCierra = document.querySelector('#btn-cierra');
 const btnAdelanta = document.querySelector('#btn-adelanta');
 const btnRetrocede = document.querySelector('#btn-retrocede');
@@ -44,26 +81,6 @@ const retrocederImagen = () => {
 
 btnRetrocede.addEventListener('click', retrocederImagen);
 
-// array de fotos
-
-
-
-
-
-
-
-
-
-// formulario de presupuesto
-
-let formulario = document.getElementById("formularioCotizacion");
-
-// formulario.addEventListener("submit" , validarForm);
-// formulario.addEventListener("submit" , (e) => {
-//     e.preventdefalut();
-
-
-// });
 
 
 
